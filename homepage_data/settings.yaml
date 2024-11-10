@@ -1,0 +1,24 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings
+
+language: pt-BR
+backgroundOpacity: 0.6
+headerStyle: underlined
+cardBlur: md
+statusStyle: "basic"
+showStats: true
+
+background:
+  image: /images/tokyo-night.jpg
+  brightness: 75
+
+layout:
+  Media Player:
+    style: row
+  Media Finder:
+    style: row
+    columns: 3
+
+providers:
+  # openweathermap: apikeyhere

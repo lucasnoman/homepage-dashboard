@@ -1,0 +1,30 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/service-widgets
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+
+- search:
+    provider: google
+    target: _blank
+
+- datetime:
+    text_size: md
+    format:
+      dateStyle: short
+      timeStyle: short
+
+- openweathermap:
+    label: Belo Horizonte
+    latitude: {{HOMEPAGE_VAR_OPENWEATHER_LAT}}
+    longitude: {{HOMEPAGE_VAR_OPENWEATHER_LON}}
+    units: metric
+    provider: openweathermap
+    apiKey: {{HOMEPAGE_VAR_OPENWEATHER_API_KEY}}
+    cache: 5 # Time in minutes to cache API responses, to stay within limits
+    lang: pt_br
+    format:
+      maximumFractionDigits: 1

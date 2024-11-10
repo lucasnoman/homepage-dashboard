@@ -1,0 +1,72 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services
+
+- Media Player:
+    - Plex:
+        icon: plex.png
+        href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
+        description: Serviço de streaming de mídia local
+        ping: *plex
+
+- Media Finder:
+    - Sonarr:
+        icon: sonarr.png
+        href: &sonarr {{HOMEPAGE_VAR_SONARR_HOST}}
+        description: Serviço de busca de séries
+        server: docker
+        container: sonarr
+        widget:
+          type: sonarr
+          url: *sonarr
+          key: {{HOMEPAGE_VAR_SONARR_KEY}}
+    - Radarr:
+        icon: radarr.png
+        href: &radarr {{HOMEPAGE_VAR_RADARR_HOST}}
+        description: Serviço de busca de filmes
+        server: docker
+        container: radarr
+        widget:
+          type: radarr
+          url: *radarr
+          key: {{HOMEPAGE_VAR_RADARR_KEY}}
+    - Readarr:
+        icon: readarr.png
+        href: &readarr {{HOMEPAGE_VAR_READARR_HOST}}
+        description: Serviço de busca de livros
+        server: docker
+        container: readarr
+        widget:
+          type: readarr
+          url: *readarr
+          key: {{HOMEPAGE_VAR_READARR_KEY}}
+
+- Configurador Home Media:
+    - Prowlarr:
+        icon: prowlarr.png
+        href: &prowlarr {{HOMEPAGE_VAR_PROWLARR_HOST}}
+        description: Serviço de busca de indexadores torrent
+        server: docker
+        container: prowlarr
+        widget:
+          type: prowlarr
+          url: *prowlarr
+          key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
+    - Bazarr:
+        icon: bazarr.png
+        href: &bazarr {{HOMEPAGE_VAR_BAZARR_HOST}}
+        description: Serviço de busca de legendas
+        server: docker
+        container: bazarr
+        widget:
+          type: bazarr
+          url: *bazarr
+          key: {{HOMEPAGE_VAR_BAZARR_KEY}}
+
+- Gerenciador de containers:
+    - Portainer:
+        icon: portainer.png
+        href: &portainerr {{HOMEPAGE_VAR_PORTAINER_HOST}}
+        description: Serviço de gerenciamento de containers Docker
+        server: docker
+        container: portainer
