@@ -16,6 +16,7 @@ background:
 layout:
   Media Player:
     style: row
+    columns: 2
   Media Finder:
     style: row
     columns: 3

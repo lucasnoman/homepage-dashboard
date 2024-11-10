@@ -8,6 +8,11 @@
         href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
         description: Serviço de streaming de mídia local
         ping: *plex
+    - Overseerr:
+        icon: overseerr.png
+        href: &overseerr {{HOMEPAGE_VAR_OVERSEERR_HOST}}
+        description: Serviço de solicitação de mídia
+        ping: *overseerr
 
 - Media Finder:
     - Sonarr:
