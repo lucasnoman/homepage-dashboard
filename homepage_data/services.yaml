@@ -67,11 +67,24 @@
           type: bazarr
           url: *bazarr
           key: {{HOMEPAGE_VAR_BAZARR_KEY}}
+    - Bitmagnet:
+        icon: https://avatars.githubusercontent.com/u/146768397?s=200&v=4
+        href: &bitmagnet {{HOMEPAGE_VAR_BITMAGNET_HOST}}
+        description: Serviço de busca de legendas
+        server: docker
+        container: bitmagnet
 
 - Gerenciador de containers:
     - Portainer:
         icon: portainer.png
-        href: &portainerr {{HOMEPAGE_VAR_PORTAINER_HOST}}
+        href: {{HOMEPAGE_VAR_PORTAINER_HOST}}
         description: Serviço de gerenciamento de containers Docker
         server: docker
         container: portainer
+
+- Downloader Client:
+    - qBittorrent:
+        icon: qbittorrent.png
+        href: &qbittorrent {{HOMEPAGE_VAR_QBITTORRENT_HOST}}
+        description: Serviço de gerenciamento de containers Docker
+        ping: *qbittorrent
