@@ -50,7 +50,7 @@
     - Prowlarr:
         icon: prowlarr.png
         href: &prowlarr {{HOMEPAGE_VAR_PROWLARR_HOST}}
-        description: Serviço de busca de indexadores torrent
+        description: Serviço de busca de indexadores torrent e nzb
         server: docker
         container: prowlarr
         widget:
@@ -70,7 +70,7 @@
     - Bitmagnet:
         icon: https://avatars.githubusercontent.com/u/146768397?s=200&v=4
         href: &bitmagnet {{HOMEPAGE_VAR_BITMAGNET_HOST}}
-        description: Serviço de busca de legendas
+        description: Serviço de busca e gerenciamento local de indexadores
         server: docker
         container: bitmagnet
 
@@ -86,5 +86,5 @@
     - qBittorrent:
         icon: qbittorrent.png
         href: &qbittorrent {{HOMEPAGE_VAR_QBITTORRENT_HOST}}
-        description: Serviço de gerenciamento de containers Docker
+        description: Serviço de download e gerenciamento de conteúdos torrent
         ping: *qbittorrent
