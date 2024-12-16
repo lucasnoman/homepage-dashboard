@@ -87,4 +87,5 @@
         icon: qbittorrent.png
         href: &qbittorrent {{HOMEPAGE_VAR_QBITTORRENT_HOST}}
         description: Serviço de download e gerenciamento de conteúdos torrent
-        ping: *qbittorrent
+        server: docker
+        container: qbittorrent
