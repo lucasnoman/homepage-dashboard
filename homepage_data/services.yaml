@@ -89,3 +89,11 @@
         description: Serviço de download e gerenciamento de conteúdos torrent
         server: docker
         container: qbittorrent
+
+- Controle de gastos:
+    - Wallos:
+        icon: https://github.com/ellite/Wallos/raw/main/images/siteicons/walloswhite.png
+        href: &wallos {{HOMEPAGE_VAR_WALLOS_HOST}}
+        description: Serviço de gerenciamento de gastos
+        server: docker
+        container: wallos

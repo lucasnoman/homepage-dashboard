@@ -20,6 +20,8 @@ layout:
   Media Finder:
     style: row
     columns: 3
+  Controle de gastos:
+    style: row
 
 providers:
   # openweathermap: apikeyhere
