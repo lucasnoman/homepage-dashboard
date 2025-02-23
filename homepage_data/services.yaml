@@ -7,12 +7,24 @@
         icon: plex.png
         href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
         description: Serviço de streaming de mídia local
-        ping: *plex
-    - Overseerr:
-        icon: overseerr.png
-        href: &overseerr {{HOMEPAGE_VAR_OVERSEERR_HOST}}
+        siteMonitor: *plex
+    - Emby:
+        icon: emby.png
+        href: &emby {{HOMEPAGE_VAR_EMBY_HOST}}
+        description: Serviço de streaming de mídia local
+        siteMonitor: *emby
+        server: docker
+        container: embyserver
+    - Jellyseerr:
+        icon: jellyseerr.png
+        href: &jellyseerr {{HOMEPAGE_VAR_JELLYSEERR_HOST}}
         description: Serviço de solicitação de mídia
-        ping: *overseerr
+        ping: *jellyseerr
+    - Tautulli:
+        icon: tautulli.png
+        href: &tautulli {{HOMEPAGE_VAR_TAUTULLI_HOST}}
+        description: Serviço de acompanhamento de mídia (o que foi visto, etc)
+        ping: *tautulli
 
 - Media Finder:
     - Sonarr:
@@ -67,14 +79,6 @@
           type: bazarr
           url: *bazarr
           key: {{HOMEPAGE_VAR_BAZARR_KEY}}
-
-- Gerenciador de containers:
-    - Portainer:
-        icon: portainer.png
-        href: {{HOMEPAGE_VAR_PORTAINER_HOST}}
-        description: Serviço de gerenciamento de containers Docker
-        server: docker
-        container: portainer
 
 - Downloader Client:
     - qBittorrent:
