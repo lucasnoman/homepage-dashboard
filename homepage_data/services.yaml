@@ -2,83 +2,48 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services
 
-- Media Player:
-    - Plex:
-        icon: plex.png
-        href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
-        description: Serviço de streaming de mídia local
-        siteMonitor: *plex
-    - Emby:
-        icon: emby.png
-        href: &emby {{HOMEPAGE_VAR_EMBY_HOST}}
-        description: Serviço de streaming de mídia local
-        siteMonitor: *emby
-        server: docker
-        container: embyserver
-    - Jellyseerr:
-        icon: jellyseerr.png
-        href: &jellyseerr {{HOMEPAGE_VAR_JELLYSEERR_HOST}}
-        description: Serviço de solicitação de mídia
-        ping: *jellyseerr
-    - Tautulli:
-        icon: tautulli.png
-        href: &tautulli {{HOMEPAGE_VAR_TAUTULLI_HOST}}
-        description: Serviço de acompanhamento de mídia (o que foi visto, etc)
-        ping: *tautulli
+- Media Management:
+    - Player:
+        - Jellyseerr:
+            icon: jellyseerr.png
+            href: &jellyseerr {{HOMEPAGE_VAR_JELLYSEERR_HOST}}
+            description: Serviço de solicitação de mídia
+        - Plex:
+            icon: plex.png
+            href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
+            description: Serviço de streaming de mídia local
+        - Emby:
+            icon: emby.png
+            href: &emby {{HOMEPAGE_VAR_EMBY_HOST}}
+            description: Serviço de streaming de mídia local
+        - Tautulli:
+            icon: tautulli.png
+            href: &tautulli {{HOMEPAGE_VAR_TAUTULLI_HOST}}
+            description: Serviço de acompanhamento de mídia (o que foi visto, etc)
 
-- Media Finder:
-    - Sonarr:
-        icon: sonarr.png
-        href: &sonarr {{HOMEPAGE_VAR_SONARR_HOST}}
-        description: Serviço de busca de séries
-        server: docker
-        container: sonarr
-        widget:
-          type: sonarr
-          url: *sonarr
-          key: {{HOMEPAGE_VAR_SONARR_KEY}}
-    - Radarr:
-        icon: radarr.png
-        href: &radarr {{HOMEPAGE_VAR_RADARR_HOST}}
-        description: Serviço de busca de filmes
-        server: docker
-        container: radarr
-        widget:
-          type: radarr
-          url: *radarr
-          key: {{HOMEPAGE_VAR_RADARR_KEY}}
-    - Readarr:
-        icon: readarr.png
-        href: &readarr {{HOMEPAGE_VAR_READARR_HOST}}
-        description: Serviço de busca de livros
-        server: docker
-        container: readarr
-        widget:
-          type: readarr
-          url: *readarr
-          key: {{HOMEPAGE_VAR_READARR_KEY}}
+    - Finder:
+        - Sonarr:
+            icon: sonarr.png
+            href: &sonarr {{HOMEPAGE_VAR_SONARR_HOST}}
+            description: Serviço de busca de séries
+        - Radarr:
+            icon: radarr.png
+            href: &radarr {{HOMEPAGE_VAR_RADARR_HOST}}
+            description: Serviço de busca de filmes
+        - Readarr:
+            icon: readarr.png
+            href: &readarr {{HOMEPAGE_VAR_READARR_HOST}}
+            description: Serviço de busca de livros
 
-- Configurador Home Media:
-    - Prowlarr:
-        icon: prowlarr.png
-        href: &prowlarr {{HOMEPAGE_VAR_PROWLARR_HOST}}
-        description: Serviço de busca de indexadores torrent e nzb
-        server: docker
-        container: prowlarr
-        widget:
-          type: prowlarr
-          url: *prowlarr
-          key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
-    - Bazarr:
-        icon: bazarr.png
-        href: &bazarr {{HOMEPAGE_VAR_BAZARR_HOST}}
-        description: Serviço de busca de legendas
-        server: docker
-        container: bazarr
-        widget:
-          type: bazarr
-          url: *bazarr
-          key: {{HOMEPAGE_VAR_BAZARR_KEY}}
+    - Configuration:
+        - Prowlarr:
+            icon: prowlarr.png
+            href: &prowlarr {{HOMEPAGE_VAR_PROWLARR_HOST}}
+            description: Serviço de busca de indexadores torrent e nzb
+        - Bazarr:
+            icon: bazarr.png
+            href: &bazarr {{HOMEPAGE_VAR_BAZARR_HOST}}
+            description: Serviço de busca de legendas
 
 - Downloader Client:
     - qBittorrent:
@@ -88,10 +53,14 @@
         server: docker
         container: qbittorrent
 
-- Controle de gastos:
+- Financial Management:
     - Wallos:
         icon: https://github.com/ellite/Wallos/raw/main/images/siteicons/walloswhite.png
         href: &wallos {{HOMEPAGE_VAR_WALLOS_HOST}}
         description: Serviço de gerenciamento de gastos
-        server: docker
-        container: wallos
+
+- Others:
+    - Technitium DNS:
+        icon: technitium.png
+        href: &technitium http://192.168.0.100:5380
+        description: DNS UI

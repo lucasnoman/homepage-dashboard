@@ -6,7 +6,7 @@ language: pt-BR
 backgroundOpacity: 0.6
 headerStyle: underlined
 cardBlur: md
-statusStyle: "basic"
+statusStyle: 'basic'
 showStats: true
 
 background:
@@ -14,14 +14,9 @@ background:
   brightness: 75
 
 layout:
-  Media Player:
-    style: row
-    columns: 2
-  Media Finder:
+  Media Management:
     style: row
     columns: 3
-  Controle de gastos:
-    style: row
 
 providers:
   # openweathermap: apikeyhere
