@@ -58,9 +58,17 @@
         icon: https://github.com/ellite/Wallos/raw/main/images/siteicons/walloswhite.png
         href: &wallos {{HOMEPAGE_VAR_WALLOS_HOST}}
         description: Serviço de gerenciamento de gastos
+    - Firefly III:
+        icon: firefly-iii.png
+        href: &firefly http://192.168.0.100:81
+        description: Serviço de gerenciamento de gastos
 
 - Others:
     - Technitium DNS:
         icon: technitium.png
-        href: &technitium http://192.168.0.100:5380
+        href: &technitium {{HOMEPAGE_VAR_TECHNITIUM_HOST}}
         description: DNS UI
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager.png
+        href: &npm {{HOMEPAGE_VAR_NGINX_HOST}}
+        description: Gerenciador de proxy reverso
