@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/settings
 
-language: pt-BR
+language: en-US
 backgroundOpacity: 0.6
 headerStyle: underlined
 cardBlur: md
