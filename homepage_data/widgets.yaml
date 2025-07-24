@@ -12,6 +12,7 @@
     target: _blank
 
 - datetime:
+    locale: pt-BR
     text_size: md
     format:
       dateStyle: short
