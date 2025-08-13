@@ -2,54 +2,91 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services
 
-- Media Management:
-    - Player:
-        - Jellyseerr:
-            icon: jellyseerr.png
-            href: &jellyseerr {{HOMEPAGE_VAR_JELLYSEERR_HOST}}
-            description: Serviço de solicitação de mídia
-        - Plex:
-            icon: plex.png
-            href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
-            description: Serviço de streaming de mídia local
-        - Seanime:
-            icon: https://github.com/5rahim/seanime/blob/main/docs/images/logo.png?raw=true
-            href: &seanime {{HOMEPAGE_VAR_SEANIME_HOST}}
-            description: Serviço de streaming de animes e mangas
-        - Tautulli:
-            icon: tautulli.png
-            href: &tautulli {{HOMEPAGE_VAR_TAUTULLI_HOST}}
-            description: Serviço de acompanhamento de mídia (o que foi visto, etc)
+- Media:
+    - Jellyseerr:
+        icon: jellyseerr.png
+        href: &jellyseerr {{HOMEPAGE_VAR_JELLYSEERR_HOST}}
+        description: Serviço de solicitação de mídia
+        server: docker
+        container: jellyseerr
+    - Plex:
+        icon: plex.png
+        href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
+        description: Serviço de streaming de mídia local
+        widget:
+          type: plex
+          url: *plex
+          key: n8ACXxji9yakRshgxshS
+    - Jellyfin:
+        icon: jellyfin.png
+        href: &jellyfin {{HOMEPAGE_VAR_JELLYFIN_HOST}}
+        description: Serviço de streaming de mídia local
+        server: docker
+        container: jellyfin
+    - Seanime:
+        icon: https://github.com/5rahim/seanime/blob/main/docs/images/logo.png?raw=true
+        href: &seanime {{HOMEPAGE_VAR_SEANIME_HOST}}
+        description: Serviço de streaming de animes e mangas
 
-    - Finder:
-        - Sonarr:
-            icon: sonarr.png
-            href: &sonarr {{HOMEPAGE_VAR_SONARR_HOST}}
-            description: Serviço de busca de séries
-        - Radarr:
-            icon: radarr.png
-            href: &radarr {{HOMEPAGE_VAR_RADARR_HOST}}
-            description: Serviço de busca de filmes
+- Finder:
+    - Sonarr:
+        icon: sonarr.png
+        href: &sonarr {{HOMEPAGE_VAR_SONARR_HOST}}
+        description: Serviço de busca de séries
+        widget:
+          type: sonarr
+          url: *sonarr
+          key: {{HOMEPAGE_VAR_SONARR_KEY}}
+    - Radarr:
+        icon: radarr.png
+        href: &radarr {{HOMEPAGE_VAR_RADARR_HOST}}
+        description: Serviço de busca de filmes
+        widget:
+          type: radarr
+          url: *radarr
+          key: {{HOMEPAGE_VAR_RADARR_KEY}}
 
-    - Configuration:
-        - Prowlarr:
-            icon: prowlarr.png
-            href: &prowlarr {{HOMEPAGE_VAR_PROWLARR_HOST}}
-            description: Serviço de busca de indexadores torrent e nzb
-        - Bazarr:
-            icon: bazarr.png
-            href: &bazarr {{HOMEPAGE_VAR_BAZARR_HOST}}
-            description: Serviço de busca de legendas
+- Dashboard:
+    - Tautulli:
+        icon: tautulli.png
+        href: &tautulli {{HOMEPAGE_VAR_TAUTULLI_HOST}}
+        description: Serviço de acompanhamento de mídia (o que foi visto, etc)
+        widget:
+          type: tautulli
+          url: *tautulli
+          key: {{HOMEPAGE_VAR_TAUTULLI_KEY}}
 
-- Downloader Client:
+- Configuration:
+    - Prowlarr:
+        icon: prowlarr.png
+        href: &prowlarr {{HOMEPAGE_VAR_PROWLARR_HOST}}
+        description: Serviço de busca de indexadores torrent e nzb
+        widget:
+          type: prowlarr
+          url: *prowlarr
+          key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
+    - Bazarr:
+        icon: bazarr.png
+        href: &bazarr {{HOMEPAGE_VAR_BAZARR_HOST}}
+        description: Serviço de busca de legendas
+        widget:
+          type: bazarr
+          url: *bazarr
+          key: {{HOMEPAGE_VAR_BAZARR_KEY}}
+
+- Tools:
     - qBittorrent:
         icon: qbittorrent.png
         href: &qbittorrent {{HOMEPAGE_VAR_QBITTORRENT_HOST}}
         description: Serviço de download e gerenciamento de conteúdos torrent
         server: docker
         container: qbittorrent
+        widget:
+          type: qbittorrent
+          url: *qbittorrent
+          username: admin
+          password: {{HOMEPAGE_VAR_QBITTORRENT_PASS}}
 
-- Others:
     - Technitium DNS:
         icon: technitium.png
         href: &technitium {{HOMEPAGE_VAR_TECHNITIUM_HOST}}

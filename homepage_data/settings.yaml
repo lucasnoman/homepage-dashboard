@@ -6,7 +6,7 @@ language: en-US
 backgroundOpacity: 0.6
 headerStyle: underlined
 cardBlur: md
-statusStyle: 'basic'
+statusStyle: 'dot'
 showStats: true
 
 background:
@@ -14,9 +14,15 @@ background:
   brightness: 75
 
 layout:
-  Media Management:
+  Media:
     style: row
-    columns: 3
+    columns: 4
+  Finder:
+  Dashboard:
+  Configuration:
+  Tools:
+    style: row
+    columns: 2
 
 providers:
   # openweathermap: apikeyhere
