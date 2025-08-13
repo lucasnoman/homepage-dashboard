@@ -11,7 +11,7 @@ services:
       - type: bind
         source: ${HOMEPAGE_FILE_CONFIG}/images
         target: /app/public/images
-      - /var/run/docker.sock:/var/run/docker.sock # optional
+      - /var/run/docker.sock:/var/run/docker.sock:ro # optional
     environment:
       PUID: ${PUID}
       PGID: ${PGID}
@@ -29,6 +29,7 @@ services:
       HOMEPAGE_VAR_BAZARR_KEY: ${HOMEPAGE_VAR_BAZARR_KEY}
 
       HOMEPAGE_VAR_PLEX_HOST: ${HOMEPAGE_VAR_SERVER_HOST}:${HOMEPAGE_VAR_PLEX_PORT}
+      HOMEPAGE_VAR_SEANIME_HOST: ${HOMEPAGE_VAR_SERVER_HOST}:43211
       HOMEPAGE_VAR_JELLYSEERR_HOST: ${HOMEPAGE_VAR_SERVER_HOST}:${HOMEPAGE_VAR_JELLYSEERR_PORT}
       HOMEPAGE_VAR_TAUTULLI_HOST: ${HOMEPAGE_VAR_SERVER_HOST}:${HOMEPAGE_VAR_TAUTULLI_PORT}
       HOMEPAGE_VAR_SONARR_HOST: ${HOMEPAGE_VAR_SERVER_HOST}:${HOMEPAGE_VAR_SONARR_PORT}

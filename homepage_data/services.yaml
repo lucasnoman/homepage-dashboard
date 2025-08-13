@@ -12,6 +12,10 @@
             icon: plex.png
             href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
             description: Serviço de streaming de mídia local
+        - Seanime:
+            icon: https://github.com/5rahim/seanime/blob/main/docs/images/logo.png?raw=true
+            href: &seanime {{HOMEPAGE_VAR_SEANIME_HOST}}
+            description: Serviço de streaming de animes e mangas
         - Tautulli:
             icon: tautulli.png
             href: &tautulli {{HOMEPAGE_VAR_TAUTULLI_HOST}}
