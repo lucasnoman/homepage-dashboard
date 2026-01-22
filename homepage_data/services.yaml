@@ -46,16 +46,6 @@
           url: *radarr
           key: {{HOMEPAGE_VAR_RADARR_KEY}}
 
-- Dashboard:
-    - Tautulli:
-        icon: tautulli.png
-        href: &tautulli {{HOMEPAGE_VAR_TAUTULLI_HOST}}
-        description: Serviço de acompanhamento de mídia (o que foi visto, etc)
-        widget:
-          type: tautulli
-          url: *tautulli
-          key: {{HOMEPAGE_VAR_TAUTULLI_KEY}}
-
 - Configuration:
     - Prowlarr:
         icon: prowlarr.png
@@ -86,8 +76,3 @@
           url: *qbittorrent
           username: admin
           password: {{HOMEPAGE_VAR_QBITTORRENT_PASS}}
-
-    - Technitium DNS:
-        icon: technitium.png
-        href: &technitium {{HOMEPAGE_VAR_TECHNITIUM_HOST}}
-        description: DNS UI
