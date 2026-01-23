@@ -13,6 +13,8 @@
         icon: plex.png
         href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
         description: Serviço de streaming de mídia local
+        server: docker
+        container: plex
         widget:
           type: plex
           url: *plex
@@ -24,8 +26,10 @@
         server: docker
         container: jellyfin
     - Seanime:
-        icon: https://github.com/5rahim/seanime/blob/main/docs/images/logo.png?raw=true
+        icon: https://raw.githubusercontent.com/5rahim/seanime/refs/heads/main/docs/images/seanime-logo.png
         href: &seanime {{HOMEPAGE_VAR_SEANIME_HOST}}
+        server: docker
+        container: seanime
         description: Serviço de streaming de animes e mangas
 
 - Finder:
@@ -33,6 +37,7 @@
         icon: sonarr.png
         href: &sonarr {{HOMEPAGE_VAR_SONARR_HOST}}
         description: Serviço de busca de séries
+        ping: *sonarr
         widget:
           type: sonarr
           url: *sonarr
@@ -41,6 +46,7 @@
         icon: radarr.png
         href: &radarr {{HOMEPAGE_VAR_RADARR_HOST}}
         description: Serviço de busca de filmes
+        ping: *radarr
         widget:
           type: radarr
           url: *radarr
@@ -51,6 +57,7 @@
         icon: prowlarr.png
         href: &prowlarr {{HOMEPAGE_VAR_PROWLARR_HOST}}
         description: Serviço de busca de indexadores torrent e nzb
+        ping: *prowlarr
         widget:
           type: prowlarr
           url: *prowlarr
@@ -59,6 +66,7 @@
         icon: bazarr.png
         href: &bazarr {{HOMEPAGE_VAR_BAZARR_HOST}}
         description: Serviço de busca de legendas
+        ping: *bazarr
         widget:
           type: bazarr
           url: *bazarr
@@ -76,3 +84,10 @@
           url: *qbittorrent
           username: admin
           password: {{HOMEPAGE_VAR_QBITTORRENT_PASS}}
+
+    - Portainer:
+        icon: portainer.png
+        href: &portainer {{HOMEPAGE_VAR_PORTAINER_HOST}}
+        description: Serviço de download e gerenciamento de conteúdos torrent
+        server: docker
+        container: portainer
