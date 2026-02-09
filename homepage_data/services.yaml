@@ -3,12 +3,6 @@
 # https://gethomepage.dev/configs/services
 
 - Media:
-    - Jellyseerr:
-        icon: jellyseerr.png
-        href: &jellyseerr {{HOMEPAGE_VAR_JELLYSEERR_HOST}}
-        description: Serviço de solicitação de mídia
-        server: docker
-        container: jellyseerr
     - Plex:
         icon: plex.png
         href: &plex {{HOMEPAGE_VAR_PLEX_HOST}}
