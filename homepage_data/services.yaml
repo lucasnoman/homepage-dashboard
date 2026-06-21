@@ -85,3 +85,9 @@
         description: Serviço de download e gerenciamento de conteúdos torrent
         server: docker
         container: portainer
+
+- Oracle Server:
+    - Dockhand:
+        icon: dockhand.png
+        href: &dockhand {{HOMEPAGE_VAR_DOCKHAND_HOST}}
+        description: Serviço de gerenciamento de containers
