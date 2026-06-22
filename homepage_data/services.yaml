@@ -91,3 +91,7 @@
         icon: dockhand.png
         href: &dockhand {{HOMEPAGE_VAR_DOCKHAND_HOST}}
         description: Serviço de gerenciamento de containers
+    - N8N:
+        icon: n8n.png
+        href: &n8n {{HOMEPAGE_VAR_N8N_HOST}}
+        description: Criador de workflows

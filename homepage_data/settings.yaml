@@ -23,6 +23,9 @@ layout:
   Tools:
     style: row
     columns: 2
+  Oracle Server:
+    style: row
+    columns: 2
 
 providers:
   # openweathermap: apikeyhere
