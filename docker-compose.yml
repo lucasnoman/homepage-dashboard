@@ -12,6 +12,8 @@ services:
         source: ${HOMEPAGE_FILE_CONFIG}/images
         target: /app/public/images
       - /var/run/docker.sock:/var/run/docker.sock:ro # optional
+    networks:
+      - traefik-network
     environment:
       PUID: ${PUID}
       PGID: ${PGID}
@@ -35,8 +37,18 @@ services:
       HOMEPAGE_VAR_PROWLARR_HOST: ${SERVER_HOST}:9696
       HOMEPAGE_VAR_BAZARR_HOST: ${SERVER_HOST}:6767
       HOMEPAGE_VAR_QBITTORRENT_HOST: ${SERVER_HOST}:8080
-      HOMEPAGE_VAR_PORTAINER_HOST: ${SSL_SERVER_HOST}:9443
+      HOMEPAGE_VAR_PORTAINER_HOST: https://portainer.${HOME_SERVER_DOMAIN}
       HOMEPAGE_VAR_DOCKHAND_HOST: ${ORACLE_SERVER_DOCKHAND}
 
       HOMEPAGE_VAR_QBITTORRENT_PASS: ${QBITTORRENT_PASS}
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.homepage.rule=Host(`homepage.lucascnoman.duckdns.org`)'
+      - 'traefik.http.routers.homepage.entrypoints=websecure'
+      - 'traefik.http.routers.homepage.tls=true'
+      - 'traefik.http.services.homepage.loadbalancer.server.port=3000'
     restart: unless-stopped
+
+networks:
+  traefik-network:
+    external: true
