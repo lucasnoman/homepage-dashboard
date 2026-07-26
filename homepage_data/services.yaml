@@ -79,17 +79,17 @@
           username: admin
           password: {{HOMEPAGE_VAR_QBITTORRENT_PASS}}
 
-    - Portainer:
-        icon: portainer.png
-        href: &portainer {{HOMEPAGE_VAR_PORTAINER_HOST}}
+    - Dockhand Home Server:
+        icon: dockhand.png
+        href: &dockhand {{HOMEPAGE_VAR_DOCKHAND_HOME_HOST}}
         description: Serviço de download e gerenciamento de conteúdos torrent
         server: docker
-        container: portainer
+        container: dockhand
 
 - Oracle Server:
-    - Dockhand:
+    - Dockhand Oracle Server:
         icon: dockhand.png
-        href: &dockhand {{HOMEPAGE_VAR_DOCKHAND_HOST}}
+        href: &dockhand {{HOMEPAGE_VAR_DOCKHAND_ORACLE_HOST}}
         description: Serviço de gerenciamento de containers
     - N8N:
         icon: n8n.png
