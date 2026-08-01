@@ -19,12 +19,12 @@
         description: Serviço de streaming de mídia local
         server: docker
         container: jellyfin
-    - Seanime:
-        icon: https://raw.githubusercontent.com/5rahim/seanime/refs/heads/main/docs/images/seanime-logo.png
-        href: &seanime {{HOMEPAGE_VAR_SEANIME_HOST}}
+    - Suwayomi:
+        icon: suwayomi.png
+        href: &suwayomi {{HOMEPAGE_VAR_SUWAYOMI_HOST}}
         server: docker
-        container: seanime
-        description: Serviço de streaming de animes e mangas
+        container: suwayomi
+        description: Serviço de streaming de mangas
 
 - Finder:
     - Sonarr:
