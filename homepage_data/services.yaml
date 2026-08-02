@@ -22,9 +22,10 @@
     - Suwayomi:
         icon: suwayomi.png
         href: &suwayomi {{HOMEPAGE_VAR_SUWAYOMI_HOST}}
-        server: docker
-        container: suwayomi
+        ping: *suwayomi
         description: Serviço de streaming de mangas
+        server: docker
+        # container: suwayomi
 
 - Finder:
     - Sonarr:
@@ -78,13 +79,20 @@
           url: *qbittorrent
           username: admin
           password: {{HOMEPAGE_VAR_QBITTORRENT_PASS}}
-
     - Dockhand Home Server:
         icon: dockhand.png
         href: &dockhand {{HOMEPAGE_VAR_DOCKHAND_HOME_HOST}}
+        ping: *dockhand
         description: Serviço de download e gerenciamento de conteúdos torrent
         server: docker
-        container: dockhand
+        # container: dockhand
+    - AdGuard Home:
+        icon: adguard-home.png
+        href: &adguard {{HOMEPAGE_VAR_ADGUARD_HOST}}
+        ping: *adguard
+        description: Servidor DNS
+        server: docker
+        # container: adguardhome
 
 - Oracle Server:
     - Dockhand Oracle Server:
