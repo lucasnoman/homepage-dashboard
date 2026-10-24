@@ -93,6 +93,27 @@
         description: Servidor DNS
         server: docker
         # container: adguardhome
+    - Cleanuparr:
+        icon: cleanuparr.png
+        href: &cleanuparr {{HOMEPAGE_VAR_CLEANUPARR_HOST}}
+        ping: *cleanuparr
+        description: Gerenciamento automático dos downloads torrent Sonarr e Radarr
+        server: docker
+        # container: cleanuparr
+    - Profilarr:
+        icon: profilarr.png
+        href: &profilarr {{HOMEPAGE_VAR_PROFILARR_HOST}}
+        ping: *profilarr
+        description: Criação e auto-configuração de perfis de mídia
+        server: docker
+        # container: profilarr
+    - Subsyncarr:
+        icon: subsyncarr.png
+        href: &subsyncarr {{HOMEPAGE_VAR_SUBSYNCARR_HOST}}
+        ping: *subsyncarr
+        description: Sincronização automática de legendas
+        server: docker
+        # container: subsyncarr
 
 - Oracle Server:
     - Dockhand Oracle Server:
